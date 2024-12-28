@@ -5,6 +5,19 @@ import Image from "next/image";
 
 export const revalidate = 10; // seconds
 
+
+export async function generateStaticParams() {
+  const query = `*[_type == "post"]{
+  "slug": slug.current
+}`;
+
+  const slugs = await client.fetch(query);
+  const slugRoutes: string[] = slugs.map((slug: { slug: string }) => slug.slug);
+  return slugRoutes.map((slug: string) => ({ slug }));
+}
+
+console.log('Sanity Dataset:', process.env.NEXT_PUBLIC_SANITY_DATASET);
+
 export default async function page({
   params: { slug },
 }: {
