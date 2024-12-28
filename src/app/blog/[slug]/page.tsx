@@ -6,16 +6,6 @@ import Image from "next/image";
 export const revalidate = 10; // seconds
 
 
-export async function generateStaticParams() {
-  const query = `*[_type == "post"]{
-  "slug": slug.current
-}`;
-
-  const slugs = await client.fetch(query);
-  const slugRoutes: string[] = slugs.map((slug: { slug: string }) => slug.slug);
-  return slugRoutes.map((slug: string) => ({ slug }));
-}
-
 export default async function page({
   params: { slug },
 }: {
