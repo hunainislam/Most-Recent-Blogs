@@ -16,8 +16,6 @@ export async function generateStaticParams() {
   return slugRoutes.map((slug: string) => ({ slug }));
 }
 
-console.log('Sanity Dataset:', process.env.NEXT_PUBLIC_SANITY_DATASET);
-
 export default async function page({
   params: { slug },
 }: {
