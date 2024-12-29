@@ -7,7 +7,7 @@ export default function BlogCard({ post }: { post: Post }) {
   const imageUrl = post.image ? urlFor(post.image)?.url() : null;
 
   return (
-    <section className="flex flex-col justify-between h-[480px] rounded-lg bg-light/90 dark:bg-dark/40 group hover:ring-4  transition-transform ease-out duration-700 hover:ring-maincolor hover:scale-[1.02] hover:shadow-[0_0_2rem] hover:shadow-maincolor dark:shadow-[0_0_3rem] dark:hover:shadow-maincolor text-dark font-semibold mt-4 shadow-[0_0_2em]  hover:bg-transparent hover:text-maincolor">
+    <section className="flex flex-col justify-between h-[480px] rounded-lg bg-light/90 dark:bg-dark/40 group hover:ring-4 transition-transform ease-out duration-700 hover:ring-maincolor hover:scale-[1.02] hover:shadow-[0_0_2rem] hover:shadow-maincolor dark:shadow-[0_0_3rem] dark:hover:shadow-maincolor text-dark font-semibold mt-4 shadow-[0_0_2em] hover:bg-transparent hover:text-maincolor  dark:text-light dark:text-light/90 dark:hover:text-maincolor dark:hover:ring-2 dark:hover:ring-maincolor dark:hover:bg-transparent dark:hover:shadow-[0_0_2rem] dark:scroll-m-20 outline-none">
       {/* Image Section */}
       <div className="relative max-h-76 flex-1">
         {imageUrl ? (
@@ -38,7 +38,7 @@ export default function BlogCard({ post }: { post: Post }) {
         {/* Read More dynamic Link */}
         <Link
           href={`/blog/${post.slug}`}
-          className="block px-4 py-1 text-center bg-maincolor rounded text-dark font-semibold mt-4 shadow-[0_0_2em] hover:ring-maincolor hover:ring-2 hover:bg-transparent hover:text-maincolor transition-all duration-500"
+          className="block px-4 py-1 text-center bg-maincolor rounded text-dark font-semibold mt-4 shadow-[0_0_2em] hover:ring-maincolor hover:ring-2 hover:bg-transparent hover:text-maincolor transition-all duration-500 "
         >
           Read More
         </Link>
